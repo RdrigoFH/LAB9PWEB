@@ -35,3 +35,14 @@ for (my $line_index = 1; $line_index < @csv_lines; $line_index++) {
         }
     }
 }
+
+
+print $cgi->header("text/html");
+
+print<<HTML_BLOCK;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consulta de Universidades</title>
+    <link rel="stylesheet" href="../estilo.css" />
+</head>
