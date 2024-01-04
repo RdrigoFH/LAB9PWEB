@@ -56,3 +56,17 @@ print<<HTML_BLOCK;
         <br />
         <table>
 HTML_BLOCK
+
+if (@matching_results == 0) {
+    print "<h2>SIN COINCIDENCIAS - REALICE OTRA BUSQUEDA.</h2>\n";
+} else {
+    print<<HTML_BLOCK;
+        <tr>
+            <th style="width: 80px">CODIGO</th>
+            <th style="width: 350px">NOMBRE</th>
+            <th style="width: 80px">PERIODO</th>
+            <th style="width: 80px">CIUDAD</th>
+            <th style="width: 700px">CARRERA</th>
+            <th style="width: 80px">TIPO</th>
+        </tr>
+HTML_BLOCK
