@@ -46,3 +46,13 @@ print<<HTML_BLOCK;
     <title>Consulta de Universidades</title>
     <link rel="stylesheet" href="../estilo.css" />
 </head>
+
+<body>
+    <div style="padding-block: 5px"></div>
+    <div style="padding-block: 5px"></div>
+    <div class="content">
+        <h1>RESULTADOS DE BUSQUEDA</h1>
+        <hr />
+        <br />
+        <table>
+HTML_BLOCK
