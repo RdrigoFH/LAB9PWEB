@@ -70,3 +70,21 @@ if (@matching_results == 0) {
             <th style="width: 80px">TIPO</th>
         </tr>
 HTML_BLOCK
+
+    foreach my $result (@matching_results) {
+        print "<tr>\n";
+        foreach my $value (@$result) {
+            print "<td>" . $value . " </td>\n";
+        }
+        print "</tr>\n";
+    }
+}
+
+# Print closing HTML tags
+print<<HTML_BLOCK;
+        </table>
+    </div>
+    <div style="height: 100px;"></div>
+</body>
+</html>
+HTML_BLOCK
