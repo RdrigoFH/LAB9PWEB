@@ -19,3 +19,19 @@ my @matching_results;
 open(my $csv_file, "<", "./universidades.csv");
 my @csv_lines = <$csv_file>;
 close($csv_file);
+
+for (my $line_index = 1; $line_index < @csv_lines; $line_index++) {
+    if ($csv_lines[$line_index] =~ /(.+?)\|(.+?)\|(?:.+?\|){2}(.+?)\|(?:.+?\|){5}(.+?)\|(?:.+?\|){5}(.+?)\|/) {
+        my ($code, $name, $period, $city, $program, $type) = ($1, $2, $3, $4, $5, $6);
+        
+        if ((!$search_name || $search_name eq $name) &&
+            (!$search_period || $search_period eq $period) &&
+            (!$search_local || $search_local eq $city) &&
+            (!$search_program || $search_program eq $program)) {
+            
+            $matching_results[$result_index] = [$code, $name, $period . " años", $city, $program, $type];
+            
+            $result_index++;
+        }
+    }
+}
